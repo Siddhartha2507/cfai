@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>List vs Set Search</title>
-</head>
-<body>
-    <h1>List vs Set Membership Search</h1>
-</body>
-</html>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    text-align: center;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
