@@ -2,8 +2,26 @@
 <html>
 <head>
     <title>List vs Set Search</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
+<div class="container">
     <h1>List vs Set Membership Search</h1>
+
+    <input type="text" id="inputArray" placeholder="Enter values separated by commas">
+    <input type="text" id="targetValue" placeholder="Enter target value">
+
+    <button id="compareBtn">Search Target</button>
+
+    <div id="outputSection">
+        <p>List Time: <span id="listTime">-</span> ms</p>
+        <p>Set Time: <span id="setTime">-</span> ms</p>
+        <p>List Complexity: <span id="listComplexity">-</span></p>
+        <p>Set Complexity: <span id="setComplexity">-</span></p>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

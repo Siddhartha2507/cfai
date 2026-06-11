@@ -7,21 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetch("/compare", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                values: values,
-                target: target
-            })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ values, target })
         })
         .then(response => response.json())
         .then(data => {
-            alert(
-                "List Found: " + data.list_found +
-                "\nList Time: " + data.list_time_ms.toFixed(4) + " ms" +
-                "\nComplexity: " + data.list_complexity
-            );
+            document.getElementById("listTime").innerText = data.list_time_ms.toFixed(4);
+            document.getElementById("setTime").innerText = data.set_time_ms.toFixed(4);
+            document.getElementById("listComplexity").innerText = data.list_complexity;
+            document.getElementById("setComplexity").innerText = data.set_complexity;
         });
     });
 });
