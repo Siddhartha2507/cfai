@@ -16,6 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("setTime").innerText = data.set_time_ms.toFixed(4);
             document.getElementById("listComplexity").innerText = data.list_complexity;
             document.getElementById("setComplexity").innerText = data.set_complexity;
+
+            const ctx = document.getElementById("timeChart").getContext("2d");
+
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+
+            window.myChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["List Search", "Set Search"],
+                    datasets: [{
+                        label: "Execution Time (ms)",
+                        data: [data.list_time_ms, data.set_time_ms],
+                        backgroundColor: ["#ef4444", "#22c55e"]
+                    }]
+                }
+            });
         });
     });
 });
