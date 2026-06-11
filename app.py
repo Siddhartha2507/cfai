@@ -31,7 +31,10 @@ def compare():
         "list_time_ms": list_time,
         "set_time_ms": set_time,
         "list_complexity": "O(n)",
-        "set_complexity": "O(1) Average"
+        "set_complexity": "O(1) Average",
+        "total_elements": len(values),
+        "unique_elements": len(values_set),
+        "duplicates": len(values) - len(values_set)
     })
 
 if __name__ == "__main__":
