@@ -8,21 +8,43 @@
 <body>
 
 <div class="container">
-    <h1>List vs Set Membership Search</h1>
+    <h1>List vs Set Membership Search Dashboard</h1>
 
-    <input type="text" id="inputArray" placeholder="Enter values separated by commas">
-    <input type="text" id="targetValue" placeholder="Enter target value">
+    <p class="desc">
+        Analyze how fast Lists and Sets search for a target value.
+    </p>
 
-    <button id="compareBtn">Search Target</button>
+    <div class="input-section">
+        <input type="text" id="inputArray" placeholder="Enter values separated by commas">
+        <input type="text" id="targetValue" placeholder="Enter target value">
+
+        <button id="compareBtn">Search Target</button>
+        <button onclick="generateRandom()">🎲 Generate Random Data</button>
+    </div>
 
     <div id="outputSection">
-        <p>List Time: <span id="listTime">-</span> ms</p>
-        <p>Set Time: <span id="setTime">-</span> ms</p>
-        <p>List Complexity: <span id="listComplexity">-</span></p>
-        <p>Set Complexity: <span id="setComplexity">-</span></p>
+        <div id="dashboard">
+            <div id="resultBox">
+                <h3>Search Result</h3>
 
-        <div id="chartBox">
-            <canvas id="timeChart"></canvas>
+                <p>List Search Time: <span id="listTime">-</span> ms</p>
+                <p>Set Search Time: <span id="setTime">-</span> ms</p>
+
+                <h3>Complexity</h3>
+                <p>List: <span id="listComplexity">-</span></p>
+                <p>Set: <span id="setComplexity">-</span></p>
+
+                <h3>Dataset Info</h3>
+                <pre id="dataInfo">-</pre>
+            </div>
+
+            <div id="chartBox">
+                <canvas id="timeChart"></canvas>
+            </div>
+
+            <div id="winnerBox">
+                🏆 Winner: <span id="winner">-</span>
+            </div>
         </div>
     </div>
 </div>

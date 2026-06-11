@@ -15,6 +15,9 @@ def compare():
     values = [v.strip() for v in values if v.strip() != ""]
     target = data.get("target", "").strip()
 
+    if not values or target == "":
+        return jsonify({"error": "Please enter values and target"})
+
     values_set = set(values)
 
     start1 = time.perf_counter()
@@ -25,6 +28,8 @@ def compare():
     set_found = target in values_set
     set_time = (time.perf_counter() - start2) * 1000
 
+    winner = "Set is faster 🚀" if set_time < list_time else "List is faster"
+
     return jsonify({
         "list_found": list_found,
         "set_found": set_found,
@@ -34,7 +39,8 @@ def compare():
         "set_complexity": "O(1) Average",
         "total_elements": len(values),
         "unique_elements": len(values_set),
-        "duplicates": len(values) - len(values_set)
+        "duplicates": len(values) - len(values_set),
+        "winner": winner
     })
 
 if __name__ == "__main__":
